@@ -16,7 +16,7 @@ void unique_lock_example(int &value, const int&& n) {
     unique_lock.unlock();
     std::this_thread::sleep_for(20ms);
   }
-}
+} 
 
 int main() {
   int value = 0;
