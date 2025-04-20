@@ -9,6 +9,7 @@ using namespace std::chrono_literals;
 
 void read_thread(const int &val) {
 
+  std::this_thread::sleep_for(100ms);
   std::shared_lock<std::shared_mutex> lck(shmut);
   std::cout << "val = " << val << "\n";
   std::this_thread::sleep_for(2000ms);
@@ -17,8 +18,8 @@ void read_thread(const int &val) {
 }
 
 void write_thread(int &val) {
-
   std::lock_guard<std::shared_mutex> lck(shmut);
+  std::this_thread::sleep_for(5000ms);
   val++;
 
 }
